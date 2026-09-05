@@ -1,0 +1,11 @@
+Question 7: What happens to response time with RR as quantum lengths increase?
+Can you write an equation that gives the worst-case response time, given N
+jobs?
+
+Answer: The longer the quantum lengths, the longer is the response time.
+Concretely, say the quantum length is x and n is the number of jobs
+arriving at 0, then the worst-case scenario for the response time is when it is
+the last job scheduled that must wait for all the n − 1 jobs before it can be
+scheduled. If x_worst is the worst-case response time, then
+
+x_worst = (n - 1) × x.

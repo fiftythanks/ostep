@@ -1,0 +1,43 @@
+Question: Do the same as in the 2nd question, but also with the RR scheduler
+and a time-slice of 1.
+
+Answer:
+  FIFO (100 -> 200 -> 300):
+    response time = (0 + 100 + 300) ÷ 3 = 400 ÷ 3 ≈ 133.33
+    turnaround time = (100 + 300 + 600) ÷ 3 ≈ 333.33
+  SJF:
+    response time = (0 + 100 + 300) ÷ 3 = 400 ÷ 3 ≈ 133.33
+    turnaround time = (100 + 300 + 600) ÷ 3 ≈ 333.33
+
+Let A be the 100-long job, B the 200-long job and C the 300-long one,
+then Round-Robin will complete the workload in the following manner:
+
+0: A_1,
+1: B_1,
+2: C_1,
+...,
+(3 × (i − 1)): A_i,
+(3i): B_i,
+(3 × (i + 1)): C_i,
+...,
+297: A_100 (completed at 298),
+298: B_100,
+299: C_100,
+300: B_101,
+301: C_102,
+...,
+(2i + 98): B_i, where i >= 100,
+(2i + 99): C_i, where i >= 100,
+...,
+498: B_200 (completed at 499),
+499: C_200,
+500: C_201,
+...,
+(i + 299): C_i, where i >= 200,
+...,
+599: C_300 (completed at 600).
+
+Therefore,
+  RR:
+    response time = (0 + 1 + 2) ÷ 3 = 1
+    turnaround time = (298 + 499 + 600) ÷ 3 = 1397 ÷ 3 = 465.67

@@ -1,0 +1,10 @@
+Question: For what types of workloads and quantum lengths does SJF deliver the
+same response times as RR?
+
+Answer: The longer the job lengths, the longer is the response time. To
+demonstrate:
+
+-l 100,200,300: 133.33
+-l 200,300,400: 233.33
+-l 300,400,500: 333.33
+-l 400,500,600: 433.33

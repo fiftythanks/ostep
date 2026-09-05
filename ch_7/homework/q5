@@ -1,0 +1,5 @@
+Question: For what types of workloads and quantum lengths does SJF deliver the
+same response times as RR? 
+
+Answer: The only case when SJF has the same response times as RR is when all
+the jobs have the same length — the length of the quants in RR.

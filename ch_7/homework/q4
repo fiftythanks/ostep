@@ -1,0 +1,6 @@
+Question: For what types of workloads does SJF deliver the same turnaround
+times as FIFO?
+
+Answer: As I said in my answer to a previous question, SJF matches FIFO when
+the arrival is the order of job arrival is from the shortest to the longest
+job.
